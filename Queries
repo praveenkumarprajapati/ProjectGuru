@@ -1,0 +1,42 @@
+CREATE table users (
+	u_id int PRIMARY KEY AUTO_INCREMENT,
+    fname varchar(20),
+    lname varchar(20),
+    email varchar(20),
+    contact varchar(12),
+    dateofb date,
+    address varchar(30),
+    psw varchar(10)
+);
+
+insert into users(fname,lname,email,contact,dateofb,address,psw) 
+values('Praveen','Prajapati','18301072praveenkumar@viva-technology.org','8554947569','1996-9-13','Virar(east)','viva@123');
+
+
+
+
+create table product (
+	p_id int(12) PRIMARY KEY AUTO_INCREMENT,
+	p_name varchar(30) NOT NULL,
+    cat varchar(30) NOT NULL,
+    dspt varchar(50) NOT NULL,
+    price int(20) NOT NULL,
+    stock int(30) NOT NULL,
+    image BLOB NOT NULL
+);
+
+
+insert into product
+(p_name, cat, dspt, price, stock, image) 
+values('Resberry PI','Micro','4GB RAM microcontroller',2999, 100, LOAD_FILE('/home/praveen/Desktop/Project Guru/images/Microc/res.jpg'));
+
+create table orders(
+o_id int PRIMARY KEY AUTO_INCREMENT,
+    o_date date,
+    p_name varchar(40) NOT NULL,
+    cat varchar(20) NOT NULL,
+    price int NOT NULL,
+    dspt varchar(50),
+    FOREIGN KEY u_id REFERENCES users(u_id)
+    
+);

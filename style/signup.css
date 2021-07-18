@@ -1,0 +1,25 @@
+
+
+#logsec{
+    height: auto;
+    
+}
+
+.loginbox{
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 500px){
+
+   
+
+    .loginbox{
+    width: 600px;
+    height: auto;
+    margin: 30px;
+    
+}
+
+
+}
